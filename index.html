@@ -3,51 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Fanur Linua — Вишукані золоті прикраси ручної роботи у Миколаєві</title>
+    <title>Fanur Linua — Вишукані золоті прикраси ручної роботи</title>
     <meta name="description" content="Ювелірне ательє Fanur Linua: ексклюзивні золоті прикраси, обручки та вироби на замовлення. Мистецтво витонченості з 1987 року.">
-    
     <link rel="icon" type="image/png" href="images/favicon.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-gold: #c6a36a; /* Я зробив золото трохи більш насиченим */
+            --primary-gold: #5b2029;
             --dark-bg: #190200;
             --white: #FFFFFF;
             --light-grey: #f9f9f9;
-            --text-muted: #A0A0A0;
         }
-
-        body {
-            margin: 0;
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--white);
-            color: var(--dark-bg);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
+        body { margin: 0; font-family: 'DM Sans', sans-serif; background-color: var(--white); color: var(--dark-bg); line-height: 1.6; scroll-behavior: smooth; }
         h1, h2, h3, h4, .logo { font-family: 'Cormorant Garamond', serif; text-transform: uppercase; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
         header { padding: 20px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 1000; }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 24px; text-decoration: none; color: var(--dark-bg); font-weight: 600; }
         .logo span { color: var(--primary-gold); }
-
         nav a { margin-left: 30px; text-decoration: none; color: var(--dark-bg); font-size: 13px; letter-spacing: 1px; transition: 0.3s; text-transform: uppercase; }
         nav a:hover { color: var(--primary-gold); }
-
         .btn-primary { background: var(--primary-gold); color: white; padding: 12px 25px; text-decoration: none; display: inline-block; transition: 0.3s; border: none; font-size: 14px; cursor: pointer; }
         .btn-primary:hover { opacity: 0.9; }
-
-        /* Секції */
         section { padding: 100px 0; }
-
+        
         /* 1. HERO */
         .hero { display: flex; min-height: 85vh; align-items: center; background: var(--light-grey); flex-wrap: wrap; padding: 0; }
         .hero-content { flex: 1; padding: 60px; min-width: 300px; }
@@ -60,30 +42,34 @@
         .value-item h3 { color: var(--primary-gold); margin-bottom: 15px; }
 
         /* 3. COLLECTIONS */
-        .collections { background: white; }
         .collections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
         .collection-item { position: relative; overflow: hidden; height: 450px; }
         .collection-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
         .collection-item:hover img { transform: scale(1.05); }
         .collection-overlay { position: absolute; bottom: 30px; left: 30px; color: white; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
 
-        /* 4. PROCESS */
+        /* 4. FEATURED (Новий блок з зображенням з інету) */
+        .featured { background: #fff; border-top: 1px solid #f0f0f0; }
+        .featured-inner { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .featured-img { flex: 1; min-width: 300px; max-height: 500px; overflow: hidden; }
+        .featured-img img { width: 100%; height: 100%; object-fit: cover; }
+        .featured-text { flex: 1; min-width: 300px; }
+
+        /* 5. PROCESS */
         .process { background: var(--dark-bg); color: white; }
         .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
         .step { border-left: 1px solid var(--primary-gold); padding-left: 20px; }
         .step-num { color: var(--primary-gold); font-size: 32px; font-family: serif; }
 
-        /* 5. REVIEWS */
+        /* 6. REVIEWS */
         .reviews { background: var(--light-grey); text-align: center; }
         .review-card { background: white; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        /* 6. CONTACT */
-        .contact { background: white; }
+        /* 7. CONTACT */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; }
-        .form-group { margin-bottom: 20px; }
-        .form-input, .form-textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px solid #ddd; color: var(--dark-bg); box-sizing: border-box; font-family: inherit; }
+        .form-input, .form-textarea { width: 100%; padding: 12px; background: #f4f4f4; border: 1px solid #ddd; color: var(--dark-bg); box-sizing: border-box; }
 
-        /* FOOTER */
+        /* 8. FOOTER */
         footer { background: #000; color: #888; padding: 80px 0 40px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; border-bottom: 1px solid #222; padding-bottom: 40px; }
         .footer-column h3 { color: white; margin-bottom: 20px; font-size: 18px; }
@@ -102,7 +88,7 @@
                 <nav>
                     <a href="#about">Про нас</a>
                     <a href="#collections">Колекції</a>
-                    <a href="#process">Процес</a>
+                    <a href="#featured">Бестселер</a>
                     <a href="#contact">Контакти</a>
                     <a href="#contact" class="btn-primary">Записатися</a>
                 </nav>
@@ -114,12 +100,12 @@
         <div class="hero-content">
             <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--primary-gold);">Естетика золота з 1987 року</p>
             <h1 class="hero-title">Мистецтво,<br>яке можна <em>носити</em></h1>
-            <p>Відкрийте для себе ювелірні шедеври, що поєднують у собі багатовікові традиції та сучасний дизайн від майстрів Fanur Linua.</p>
+            <p>Відкрийте для себе ювелірні шедеври від майстрів Fanur Linua.</p>
             <br>
             <a href="#collections" class="btn-primary" style="padding: 15px 40px;">Переглянути каталог</a>
         </div>
         <div class="hero-image">
-            <img src="maison-hero-01.jpg" alt="Вишукане золоте кольє з підвіскою на м'якому фоні від Fanur Linua">
+            <img src="maison-hero-01.jpg" alt="Золота підвіска ручної роботи Fanur Linua">
         </div>
     </section>
 
@@ -127,18 +113,9 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 60px;">Чому обирають Fanur Linua</h2>
             <div class="values-grid">
-                <div class="value-item">
-                    <h3>Сертифіковане золото</h3>
-                    <p>Використовуємо тільки банківські метали вищої проби та натуральне каміння.</p>
-                </div>
-                <div class="value-item">
-                    <h3>Ручна робота</h3>
-                    <p>Кожна прикраса створюється індивідуально, зберігаючи унікальність ліній.</p>
-                </div>
-                <div class="value-item">
-                    <h3>Довічна гарантія</h3>
-                    <p>Ми впевнені у якості, тому надаємо сервісну підтримку на всі вироби.</p>
-                </div>
+                <div class="value-item"><h3>Сертифіковане золото</h3><p>Використовуємо тільки банківські метали вищої проби.</p></div>
+                <div class="value-item"><h3>Ручна робота</h3><p>Кожна прикраса створюється індивідуально.</p></div>
+                <div class="value-item"><h3>Довічна гарантія</h3><p>Ми впевнені у якості на всі 100%.</p></div>
             </div>
         </div>
     </section>
@@ -148,25 +125,29 @@
             <h2 style="font-size: 42px; text-align: center; margin-bottom: 50px;">Наші колекції</h2>
             <div class="collections-grid">
                 <div class="collection-item">
-                    <img src="maison-wedding.jpg" alt="Елегантні золоті весільні обручки на світлій поверхні">
-                    <div class="collection-overlay">
-                        <h3>Весільна лінія</h3>
-                        <p>Для особливих моментів</p>
-                    </div>
+                    <img src="maison-hero-03.jpg" alt="Весільні обручки Fanur Linua">
+                    <div class="collection-overlay"><h3>Весільна лінія</h3></div>
                 </div>
                 <div class="collection-item">
-                    <img src="maison-everyday.jpg" alt="Витончені золоті сережки, одягнені на моделі">
-                    <div class="collection-overlay">
-                        <h3>Everyday Elegance</h3>
-                        <p>Стиль на кожен день</p>
-                    </div>
+                    <img src="maison-doree-01.jpg" alt="Елегантні золоті сережки">
+                    <div class="collection-overlay"><h3>Everyday Elegance</h3></div>
                 </div>
-                <div class="collection-item">
-                    <img src="maison-men.jpg" alt="Стильний чоловічий золотий перстень на руці моделі">
-                    <div class="collection-overlay">
-                        <h3>Чоловіча серія</h3>
-                        <p>Сила та витонченість</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured" id="featured">
+        <div class="container">
+            <div class="featured-inner">
+                <div class="featured-img">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/2688215073004893118_0" alt="Ексклюзивне золоте кольє з нової колекції Fanur Linua">
+                </div>
+                <div class="featured-text">
+                    <p style="color: var(--primary-gold); letter-spacing: 2px;">ЛІМІТОВАНА СЕРІЯ</p>
+                    <h2 style="font-size: 48px; margin: 20px 0;">Золоте сяйво<br>вашої мрії</h2>
+                    <p>Наша нова знакова підвіска, натхненна ранковим сонцем. Ручне карбування та золото 750 проби створюють неповторний рельєф.</p>
+                    <br>
+                    <a href="#contact" class="btn-primary">Дізнатися ціну</a>
                 </div>
             </div>
         </div>
@@ -176,36 +157,18 @@
         <div class="container">
             <h2 style="margin-bottom: 60px; color: white;">Як ми створюємо шедеври</h2>
             <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h3>Консультація</h3>
-                    <p>Обговорюємо ідею, обираємо метал та каміння для майбутнього виробу.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h3>Ескіз</h3>
-                    <p>Створюємо 3D-модель або графічний малюнок для візуалізації прикраси.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h3>Виготовлення</h3>
-                    <p>Майстер вручну обробляє кожну деталь у нашому ательє.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">04</div>
-                    <h3>Фінал</h3>
-                    <p>Фінішне полірування та передача готового виробу власнику.</p>
-                </div>
+                <div class="step"><div class="step-num">01</div><h3>Ескіз</h3><p>Створюємо візуалізацію вашої ідеї.</p></div>
+                <div class="step"><div class="step-num">02</div><h3>Виготовлення</h3><p>Майстер працює над кожною деталлю.</p></div>
             </div>
         </div>
     </section>
 
     <section class="reviews">
         <div class="container">
-            <h2 style="margin-bottom: 50px;">Що кажуть наші клієнти</h2>
+            <h2 style="margin-bottom: 50px;">Відгуки</h2>
             <div class="review-card">
-                <p style="font-style: italic; font-size: 20px;">"Замовляли обручки за власним дизайном. Результат перевершив очікування — якість виконання на найвищому рівні!"</p>
-                <p><strong>— Олена та Михайло</strong></p>
+                <p style="font-style: italic; font-size: 20px;">"Найкраще ювелірне ательє, де я коли-небудь була!"</p>
+                <p><strong>— Олена</strong></p>
             </div>
         </div>
     </section>
@@ -215,17 +178,10 @@
             <div class="contact-grid">
                 <div>
                     <h2 class="hero-title">Завітайте до ательє</h2>
-                    <p>Ми знаходимося в самому серці міста. Наші майстри готові втілити ваші найсміливіші ювелірні мрії.</p>
-                    <p style="margin-top: 30px;">
-                        <strong>Адреса:</strong> м. Миколаїв, вул. Одеська<br>
-                        <strong>Телефон:</strong> +38 (099) 000-00-00<br>
-                        <strong>Години роботи:</strong> Пн-Сб, 10:00 - 19:00
-                    </p>
+                    <p>вул. Одеська, м. Миколаїв<br>+38 (099) 000-00-00</p>
                 </div>
                 <form>
                     <div class="form-group"><input type="text" placeholder="Ваше ім'я" class="form-input"></div>
-                    <div class="form-group"><input type="email" placeholder="Ваш Email" class="form-input"></div>
-                    <div class="form-group"><textarea placeholder="Яка прикраса вас цікавить?" class="form-textarea" rows="4"></textarea></div>
                     <button type="submit" class="btn-primary" style="width: 100%;">Надіслати запит</button>
                 </form>
             </div>
@@ -235,31 +191,10 @@
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <a href="#" class="logo" style="color: white;">Fanur <span>Linua</span></a>
-                    <p style="margin-top: 20px; max-width: 350px;">Виняткова якість та позачасова елегантність у кожній деталі нашого золота.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Навігація</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">Про ательє</a></li>
-                        <li><a href="#collections">Колекції</a></li>
-                        <li><a href="#process">Наш процес</a></li>
-                        <li><a href="#contact">Контакти</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Партнери</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://zarina.ua/" target="_blank">Ювелірний Дім ZARINA</a></li>
-                        <li><a href="https://www.tiffany.com/" target="_blank">Tiffany & Co.</a></li>
-                        <li><a href="#" target="_blank">Догляд за золотом</a></li>
-                    </ul>
-                </div>
+                <div class="footer-column"><a href="#" class="logo" style="color: white;">Fanur <span>Linua</span></a></div>
+                <div class="footer-column"><h3>Навігація</h3><ul class="footer-links"><li><a href="#about">Про нас</a></li></ul></div>
             </div>
-            <div style="text-align: center; padding-top: 30px; font-size: 12px;">
-                <p>© 2026 Fanur Linua. Розроблено для навчальних цілей згідно з вимогами SEO-оптимізації.</p>
-            </div>
+            <div style="text-align: center; padding-top: 30px; font-size: 12px;"><p>© 2026 Fanur Linua. Навчальний проект.</p></div>
         </div>
     </footer>
 
